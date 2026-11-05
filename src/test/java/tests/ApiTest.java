@@ -56,8 +56,13 @@ public class ApiTest {
             Object nombre = departamento.get("name");
 
             assertNotNull(
-                    nombre,
+                    departamento.get("name"),
                     "Existe un departamento sin nombre"
+            );
+
+            assertFalse(
+                    departamento.get("name").toString().isBlank(),
+                    "Existe un departamento con nombre vacío"
             );
 
             assertInstanceOf(
